@@ -35,14 +35,15 @@ const ShopNavigator = () => {
         component={Products}
         options={({route})=>({
           title: route.params.title,
+          headerRight: () => {
+            return (
+              <TouchableOpacity>
+                <Text>Click here</Text>
+              </TouchableOpacity>
+            );
+          },
         })
-        // headerRight: () => {
-        //   return (
-        //     <TouchableOpacity>
-        //       <Text>Click here</Text>
-        //     </TouchableOpacity>
-        //   );
-        // },
+      
       }
       />
       <Stack.Screen

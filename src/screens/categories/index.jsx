@@ -22,6 +22,7 @@ const keyExtractor = (item) => item.id.toString();
       renderItem={renderItem}
       keyExtractor={keyExtractor}
       style={styles.containerList}
+      contentContainerStyle={styles.contentContainerList}
       />
     </SafeAreaView>
   );

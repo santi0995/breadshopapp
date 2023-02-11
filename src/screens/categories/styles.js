@@ -14,5 +14,8 @@ export const styles = StyleSheet.create({
   containerList:{
     flex:1,
     paddingBottom: 60,
+  },
+  contentContainerList:{
+    paddingBottom: 30, 
   }
 });
