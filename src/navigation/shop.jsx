@@ -1,8 +1,8 @@
 import { Categories, ProductDetail, Products } from '../screens/index';
 import { Text, TouchableOpacity, View } from 'react-native';
 
+import { THEME } from '../constants/theme';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { theme } from '../constants/theme';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,12 +11,15 @@ const ShopNavigator = () => {
     <Stack.Navigator
       initialRouteName="Categories"
       screenOptions={{
-        headerTintColor: theme.colors.primary,
-        navigationBarColor: theme.colors.primary,
+        headerStyle: {
+          backgroundColor: THEME.colors.primary,
+        },
+        headerTintColor: THEME.colors.black,
+        navigationBarColor: THEME.colors.primary,
         headerTitleStyle: {
           fontFamily: 'Lobster-Regular',
-          fontSize: 18,
-          color: theme.colors.secondary,
+          fontSize: 20,
+          color: THEME.colors.secondary,
         },
         headerShadowVisible: false,
       }}>
@@ -25,22 +28,22 @@ const ShopNavigator = () => {
         component={Categories}
         options={{
           headerShown: false,
-          title: 'Categories',
         }}
       />
       <Stack.Screen
         name="Products"
         component={Products}
-        options={{
-          title: 'Products',
-          headerRight: () => {
-            return (
-              <TouchableOpacity>
-                <Text>Click here</Text>
-              </TouchableOpacity>
-            );
-          },
-        }}
+        options={({route})=>({
+          title: route.params.title,
+        })
+        // headerRight: () => {
+        //   return (
+        //     <TouchableOpacity>
+        //       <Text>Click here</Text>
+        //     </TouchableOpacity>
+        //   );
+        // },
+      }
       />
       <Stack.Screen
         name="ProductDetail"
