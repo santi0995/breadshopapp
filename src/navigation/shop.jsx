@@ -33,7 +33,7 @@ const ShopNavigator = () => {
       <Stack.Screen
         name="Products"
         component={Products}
-        options={({route})=>({
+        options={({ route }) => ({
           title: route.params.title,
           headerRight: () => {
             return (
@@ -42,16 +42,14 @@ const ShopNavigator = () => {
               </TouchableOpacity>
             );
           },
-        })
-      
-      }
+        })}
       />
       <Stack.Screen
         name="ProductDetail"
         component={ProductDetail}
-        options={{
-          title: 'Product Detail',
-        }}
+        options={({ route }) => ({
+          title: route.params.title,
+        })}
       />
     </Stack.Navigator>
   );

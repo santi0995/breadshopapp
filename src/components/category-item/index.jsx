@@ -1,6 +1,6 @@
 import { Text, TouchableOpacity, View } from 'react-native';
 
-import { styles } from './style';
+import { styles } from './styles';
 
 const CategoryItem = ({ item, onSelected }) => {
   return (
@@ -8,10 +8,10 @@ const CategoryItem = ({ item, onSelected }) => {
       <TouchableOpacity
         style={{ ...styles.contentContainer, backgroundColor: item.color }}
         onPress={() => onSelected(item)}>
-            <View>
-                <Text style={styles.title}>{item.title}</Text>
-            </View>
-        </TouchableOpacity>
+        <View>
+          <Text style={styles.title}>{item.title}</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 };
