@@ -1,15 +1,17 @@
 import { FlatList, SafeAreaView } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { CategoryItem } from '../../components';
 import React from 'react';
+import { selectCategory } from '../../store/actions';
 import { styles } from './styles';
-import { useSelector } from 'react-redux';
 
 const Categories = ({ navigation }) => {
-  const categories = useSelector((state)=>state.category.categories)
+  const dispatch = useDispatch();
+  const categories = useSelector((state) => state.category.categories);
   const onSelected = (item) => {
+    dispatch(selectCategory(item.id));
     navigation.navigate('Products', {
-      categoryId: item.id,
       title: item.title,
     });
   };
