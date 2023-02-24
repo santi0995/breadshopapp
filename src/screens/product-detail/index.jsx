@@ -16,10 +16,10 @@ const ProductDetail = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{product.title}</Text>
-      <Text style={styles.text}>{product.description}</Text>
-      <Text style={styles.text}>{product.weight}</Text>
-      <Text style={styles.text}>${product.price}</Text>
+      <Text style={styles.text}>{product?.title}</Text>
+      <Text style={styles.text}>{product?.description}</Text>
+      <Text style={styles.text}>{product?.weight}</Text>
+      <Text style={styles.text}>${product?.price}</Text>
       <Button title="Add to cart" onPress={onAddToCart} color={THEME.colors.black} />
     </View>
   );
