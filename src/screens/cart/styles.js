@@ -47,4 +47,16 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: 'Lobster-Regular',
   },
+  header: {
+    flex: 1,
+    backgroundColor: THEME.colors.white,
+    marginHorizontal: 20,
+    marginVertical: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  headerTitle: {
+    fontFamily: 'Lobster-Regular',
+    fontSize: 18,
+  },
 });
