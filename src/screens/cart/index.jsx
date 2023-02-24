@@ -1,13 +1,20 @@
 import { FlatList, Text, TouchableOpacity, View } from 'react-native';
+import {confirmOrder, removeFromCart} from '../../store/actions/index';
+import { useDispatch, useSelector } from 'react-redux';
 
 import CartItem from '../../components/cart-item';
 import { styles } from './styles';
-import { useSelector } from 'react-redux';
 
 const Cart = ({ navigation }) => {
+  const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.items);
   const total = useSelector((state) => state.cart.total);
-  const onDelete = (id) => {};
+  const onDelete = (id) => {
+    dispatch(removeFromCart(id));
+  };
+  const onCreateOrder = () => {
+    dispatch(confirmOrder(cart, total));
+  };
   const renderItem = ({ item }) => <CartItem item={item} onDelete={onDelete} />;
   const keyExtractor = (item) => item.id.toString();
   const Header = () =>
@@ -19,7 +26,7 @@ const Cart = ({ navigation }) => {
   const Footer = () =>
     cart.length > 0 && (
       <View style={styles.footer}>
-        <TouchableOpacity style={styles.buttonConfirm} onPress={() => null}>
+        <TouchableOpacity style={styles.buttonConfirm} onPress={onCreateOrder}>
           <Text style={styles.buttonConfirmText}>Confirm</Text>
           <View style={styles.totalContainer}>
             <Text style={styles.totalText}>Total:</Text>
