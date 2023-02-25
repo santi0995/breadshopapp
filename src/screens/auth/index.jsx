@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { signIn, signUp } from '../../store/actions/auth.action';
+import { signIn, signUp } from '../../store/actions';
 
 import { THEME } from '../../constants/theme/index';
 import { styles } from './styles';
@@ -15,7 +15,7 @@ import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
 const Auth = ({ navigation }) => {
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
