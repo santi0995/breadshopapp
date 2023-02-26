@@ -15,12 +15,12 @@ const authReducer = (state = initialState, action) => {
         token: action.token,
         userId: action.userId,
       };
-      case SIGN_IN:
-        return {
-          ...state,
-          token: action.token,
-          userId: action.userId,
-        }
+    case SIGN_IN:
+      return {
+        ...state,
+        token: action.token,
+        userId: action.userId,
+      };
     default:
       return state;
   }

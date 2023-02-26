@@ -35,7 +35,6 @@ export const styles = StyleSheet.create({
     borderBottomColor: THEME.colors.primary,
     borderBottomWidth: 1,
     width: '90%',
-    fontFamily: 'Lobster-Regular',
     marginBottom: 20,
   },
   buttonContainer: {

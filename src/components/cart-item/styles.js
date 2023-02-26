@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
     color: THEME.colors.text,
     marginBottom: 5,
   },
-  content:{
+  content: {
     flex: 1,
   },
   price: {

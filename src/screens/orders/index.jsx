@@ -10,6 +10,8 @@ import { useFocusEffect } from '@react-navigation/native';
 const Orders = ({ navigation }) => {
   const dispatch = useDispatch();
   const orders = useSelector((state) => state.orders.list);
+  const loading = useSelector((state) => state.orders.loading);
+  const error = useSelector((state) => state.orders.error);
   const onDelete = (id) => {
     dispatch(deleteOrder(id));
   };

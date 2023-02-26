@@ -1,11 +1,14 @@
 import { REALTIME_DATABASE_URL } from '../../constants/firebase/index';
 import { orderTypes } from '../types';
 
-const { GET_ORDERS, DELETE_ORDERS } = orderTypes;
+const { GET_ORDERS, DELETE_ORDERS, GET_ORDERS_SUCESS, GET_ORDERS_FAILURE } = orderTypes;
 
 export const getOrders = () => {
   return async (dispatch) => {
     try {
+      dispatch({
+        type: GET_ORDERS,
+      });
       const response = await fetch(`${REALTIME_DATABASE_URL}/orders.json`, {
         method: 'GET',
         headers: {
@@ -20,12 +23,12 @@ export const getOrders = () => {
         id: key,
       }));
       dispatch({
-        type: GET_ORDERS,
+        type: GET_ORDERS_SUCESS,
         orders,
       });
     } catch (error) {
       dispatch({
-        type: GET_ORDERS,
+        type: GET_ORDERS_FAILURE,
         error,
       });
     }

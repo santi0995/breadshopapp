@@ -64,7 +64,7 @@ const Tabs = () => {
           ),
           tabBarBadge: cart.length,
           tabBarBadgeStyle: {
-            backgroundColor: 'red',
+            backgroundColor: THEME.colors.error,
             color: THEME.colors.white,
             fontFamily: 'Lobster-Regular',
             fontSize: 16,
