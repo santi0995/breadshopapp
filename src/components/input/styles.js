@@ -6,7 +6,6 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   input: {
-    height: 45,
     borderBottomColor: THEME.colors.primary,
     borderBottomWidth: 1,
     width: '90%',

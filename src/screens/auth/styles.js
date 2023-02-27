@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
   content: {
     width: '80%',
     maxWidth: 400,
+    minHeight: 330,
     padding: 15,
     margin: 15,
     borderColor: THEME.colors.primary,
@@ -28,14 +29,7 @@ export const styles = StyleSheet.create({
   label: {
     fontSize: 14,
     fontFamily: 'Lobster-Regular',
-    marginVertical: 5,
-  },
-  input: {
-    height: 45,
-    borderBottomColor: THEME.colors.primary,
-    borderBottomWidth: 1,
-    width: '90%',
-    marginBottom: 20,
+    marginVertical: 10,
   },
   buttonContainer: {
     marginVertical: 10,
